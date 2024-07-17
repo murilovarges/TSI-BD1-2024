@@ -57,10 +57,10 @@ SELECT * FROM cidade;
 -- INSERIR DADOS NA TABELA CLIENTE
 INSERT INTO cliente (nome, email, id_cidade, endereco, numero, bairro, data_nasc)
 VALUES ('Murilo Silva', 'murilo@mail.com', 100, 'Rua Pedro Cavalo', 750, 
-'Porta da Perola', '1999/01/15');
+'Portal da Pérola', '1999/01/15');
 
 INSERT INTO cliente (nome, email, id_cidade, endereco, numero, bairro, data_nasc)
-VALUES ('Cássio Sterse', 'cassio@mail.com', 1, 'Rua Pedro Cavalo', 750, 
+VALUES ('Cássio Stersi', 'cassio@mail.com', 1, 'Rua Pedro Cavalo', 750, 
 'Centro', '1980/01/15');
 
 
@@ -82,6 +82,3 @@ WHERE id = 2;
 
 -- DELETA REGISTRO CIDADE
 DELETE FROM cidade WHERE id = 1;
-
-
-
