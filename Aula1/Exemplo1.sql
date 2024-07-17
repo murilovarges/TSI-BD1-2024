@@ -8,9 +8,14 @@ REVISÃO DDL - DATA DEFINITION LANGUAGE
    id da cidade (FK),  endereco, 
    numero, bairro e data nascimento. 
  */
+ 
+-- DELETAR O BANCO
+DROP DATABASE IF EXISTS IFSP;
 
- -- CRIAÇÃO DO BANCO DE DADOS
- CREATE DATABASE IFSP;
+-- CRIAÇÃO DO BANCO DE DADOS COM CONFIGURAÇÃO DE ACENTOS
+ CREATE DATABASE IFSP
+ DEFAULT CHARSET = utf8 
+ DEFAULT COLLATE = utf8_general_ci;
 
  -- SELECIONAR O BANCO DE DADOS
  USE IFSP;
@@ -39,3 +44,44 @@ REVISÃO DDL - DATA DEFINITION LANGUAGE
     CONSTRAINT fk_cliente_cidade 
         FOREIGN KEY (id_cidade) REFERENCES cidade (id)
  );
+
+-- INSERIR DADOS NA TABELA CIDADE
+INSERT INTO cidade (id, nome, estado) VALUES (1, 'Birigui', 'SP');
+INSERT INTO cidade (id, nome, estado) VALUES (100, 'Araçatuba', 'SP');
+INSERT INTO cidade (nome, estado) VALUES ('Guararapes', 'SP');
+INSERT INTO cidade (nome) VALUES ('Rio de Janeiro');
+
+-- MOSTRA REGISTROS DA TABELA CIDADE
+SELECT * FROM cidade;
+
+-- INSERIR DADOS NA TABELA CLIENTE
+INSERT INTO cliente (nome, email, id_cidade, endereco, numero, bairro, data_nasc)
+VALUES ('Murilo Silva', 'murilo@mail.com', 100, 'Rua Pedro Cavalo', 750, 
+'Porta da Perola', '1999/01/15');
+
+INSERT INTO cliente (nome, email, id_cidade, endereco, numero, bairro, data_nasc)
+VALUES ('Cássio Sterse', 'cassio@mail.com', 1, 'Rua Pedro Cavalo', 750, 
+'Centro', '1980/01/15');
+
+
+-- MOSTRA REGISTROS DA TABELA CLIENTE
+SELECT * FROM cliente;
+
+-- ATUALIZA TABELA CIDADE
+UPDATE cidade SET
+    nome = 'Belo Horizonte',
+    estado = 'MG'
+WHERE id = 1;
+
+-- UPDATE TABELA CLIENTE
+UPDATE cliente SET
+    nome = 'Cocão',
+    email = 'cocao@mail.com',
+    id_cidade = 101
+WHERE id = 2;
+
+-- DELETA REGISTRO CIDADE
+DELETE FROM cidade WHERE id = 1;
+
+
+
