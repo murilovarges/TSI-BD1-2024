@@ -18,6 +18,15 @@ DROP DATABASE IF EXISTS correios;
     PRIMARY KEY (codigo_postal)
  );
 
+ INSERT INTO caixa_postal (codigo_postal, localidade)
+ VALUES (17830000, 'Adamantina');
+
+ INSERT INTO caixa_postal (codigo_postal, localidade)
+ VALUES (16204278, 'Birigui');
+
+ INSERT INTO caixa_postal (codigo_postal, localidade)
+ VALUES (17800000, 'Guararapes');
+
  CREATE TABLE pessoa
  (    
     codigo        INT NOT NULL AUTO_INCREMENT,
@@ -29,8 +38,18 @@ DROP DATABASE IF EXISTS correios;
     FOREIGN KEY (codigo_postal) REFERENCES caixa_postal (codigo_postal)
  );
 
- CREATE TABLE telefone
- (    
+INSERT INTO pessoa (nome, cpf, idade, codigo_postal)
+VALUES('Murilo Silva','123.123.123-87', 39, 17830000);
+
+INSERT INTO pessoa (nome, cpf, idade, codigo_postal)
+VALUES('Cassio Stersi','311.123.123-87', 45, 16204278);
+
+INSERT INTO pessoa (nome, cpf, idade, codigo_postal)
+VALUES('Valtemir Neto Stersi','111.123.123-87', 49, 17800000);
+
+
+CREATE TABLE telefone
+(    
     codigo           INT NOT NULL,
     tel_residencial  VARCHAR(15),
     tel_celular      VARCHAR(15),
@@ -38,6 +57,18 @@ DROP DATABASE IF EXISTS correios;
     tel_recado       VARCHAR(15) NOT NULL,
     PRIMARY KEY (codigo),
     FOREIGN KEY (codigo) REFERENCES pessoa (codigo)
- );
+);
 
+INSERT INTO telefone (codigo, tel_residencial, tel_celular, 
+    tel_comercial, tel_recado)
+VALUES (1, null, '(18) 3622-9046', '(99) 9999-9999','(99) 9999-9999') ;
+
+
+INSERT INTO telefone (codigo, tel_residencial, tel_celular, 
+    tel_comercial, tel_recado)
+VALUES (2,  '(99) 9999-9999', '(18) 3622-9046', null, '(99) 9999-9999') ;
+
+INSERT INTO telefone (codigo, tel_residencial, tel_celular, 
+    tel_comercial, tel_recado)
+VALUES (3, '(99) 9999-9999', '(18) 3622-9046', null,'(99) 9999-9999') ;
 
