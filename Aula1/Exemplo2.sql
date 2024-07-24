@@ -42,6 +42,15 @@ INSERT INTO pessoa (nome, cpf, idade, codigo_postal)
 VALUES('Murilo Silva','123.123.123-87', 39, 17830000);
 
 INSERT INTO pessoa (nome, cpf, idade, codigo_postal)
+VALUES('Manoel Sousa','665.123.123-87', 39, 17830000);
+
+INSERT INTO pessoa (nome, cpf, idade, codigo_postal)
+VALUES('Jose Souza','789.123.123-87', 39, 17830000);
+
+INSERT INTO pessoa (nome, cpf, idade, codigo_postal)
+VALUES('Eduardo Sousszza','585.123.123-87', 39, 17830000);
+
+INSERT INTO pessoa (nome, cpf, idade, codigo_postal)
 VALUES('Cassio Stersi','311.123.123-87', 45, 16204278);
 
 INSERT INTO pessoa (nome, cpf, idade, codigo_postal)
